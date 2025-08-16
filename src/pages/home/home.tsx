@@ -680,6 +680,444 @@ const Home = () => {
 						View all universities <span style={{ fontSize: "1.3rem", fontWeight: "bold" }}>➔</span>
 					</button>
 				</div>
+				{/* Blog/news card section */}
+				<div
+					style={{
+						width: "100%",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						background: "#f8f8fa",
+						padding: "0 0 5rem 0",
+					}}
+				>
+					<div
+						style={{
+							position: "relative",
+							background: "#06153a",
+							borderRadius: "22px",
+							padding: "3.2rem 3.5rem 2.7rem 3.5rem",
+							maxWidth: "1100px",
+							width: "100%",
+							boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
+							overflow: "hidden",
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "flex-start",
+						}}
+					>
+						<span style={{
+							color: "#bfc8e6",
+							fontSize: "1.15rem",
+							fontWeight: 500,
+							marginBottom: "1.1rem",
+							display: "block"
+						}}>
+							04 Aug 2025
+						</span>
+						<h2 style={{
+							color: "#fff",
+							fontSize: "2.4rem",
+							fontWeight: 700,
+							fontFamily: "serif",
+							marginBottom: "2.2rem",
+							lineHeight: "1.15"
+						}}>
+							2026 Entry at Cambridge and Oxford University
+						</h2>
+						<button
+							style={{
+								background: "#ccfbad",
+								color: "#06153a",
+								border: "none",
+								borderRadius: "16px",
+								padding: "1rem 2.7rem",
+								fontWeight: "bold",
+								fontSize: "1.15rem",
+								cursor: "pointer",
+								marginTop: "0.5rem"
+							}}
+						>
+							Read more
+						</button>
+						{/* Decorative SVG line */}
+						<svg
+							width="480"
+							height="320"
+							viewBox="0 0 480 320"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							style={{
+								position: "absolute",
+								right: "0",
+								top: "0",
+								zIndex: 0,
+								opacity: 0.7,
+							}}
+						>
+							<path
+								d="M120 160 Q240 40 360 160 Q480 280 360 160 Q240 40 120 160"
+								stroke="#b6ff6a"
+								strokeWidth="2.5"
+								fill="none"
+							/>
+							<circle cx="400" cy="80" r="70" stroke="#b6ff6a" strokeWidth="2" fill="none" />
+						</svg>
+					</div>
+				</div>
+				{/* Blog/news grid section */}
+				<div
+					style={{
+						width: "100%",
+						display: "flex",
+						justifyContent: "center",
+						background: "#fff",
+						paddingBottom: "4rem",
+					}}
+				>
+					<div
+						style={{
+							display: "grid",
+							gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+							gap: "2.5rem",
+							maxWidth: "1200px",
+							width: "100%",
+						}}
+					>
+						{[
+							{
+								date: "31 Jul 2025",
+								title: "Top 10 Law Schools in Canada",
+								desc: "Make a head start on your legal career by studying at a Canadian Law School.",
+							},
+							{
+								date: "30 Jul 2025",
+								title: "Working Part-Time in Australia as an International Student",
+								desc: "The Australian international student visa (subclass 500) allows you to work while you study – learn more about your rights, wage and popular jobs.",
+							},
+							{
+								date: "29 Jul 2025",
+								title: "Top 10 UK Universities for MSc Marketing",
+								desc: "Whilst studying master's in marketing, students will learn the latest marketing techniques and technologies, including digital marketing, strategic marketing and data analytics.",
+							},
+						].map((blog) => (
+							<div
+								key={blog.title}
+								style={{
+									background: "#06153a",
+									borderRadius: "18px",
+									padding: "2.5rem 2.2rem 2.2rem 2.2rem",
+									boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
+									display: "flex",
+									flexDirection: "column",
+									alignItems: "flex-start",
+									position: "relative",
+									minHeight: "340px",
+								}}
+							>
+								<span style={{
+									color: "#bfc8e6",
+									fontSize: "1.13rem",
+									fontWeight: 500,
+									marginBottom: "1.1rem",
+									display: "block"
+								}}>
+									{blog.date}
+								</span>
+								<h2 style={{
+									color: "#fff",
+									fontSize: "2rem",
+									fontWeight: 700,
+									fontFamily: "serif",
+									marginBottom: "1.2rem",
+									lineHeight: "1.15"
+								}}>
+									{blog.title}
+								</h2>
+								<p style={{
+									color: "#bfc8e6",
+									fontSize: "1.13rem",
+									marginBottom: "2.2rem",
+									lineHeight: "1.5"
+								}}>
+									{blog.desc}
+								</p>
+								<button
+									style={{
+										background: "#ccfbad",
+										color: "#06153a",
+										border: "none",
+										borderRadius: "16px",
+										padding: "1rem 2.7rem",
+										fontWeight: "bold",
+										fontSize: "1.15rem",
+										cursor: "pointer",
+										marginTop: "auto"
+									}}
+								>
+									Read more
+								</button>
+								{/* Decorative SVG line in card */}
+								<svg
+									width="180"
+									height="120"
+									viewBox="0 0 180 120"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+									style={{
+										position: "absolute",
+										right: "0",
+										bottom: "0",
+										zIndex: 0,
+										opacity: 0.7,
+									}}
+								>
+									<path
+										d="M30 60 Q90 10 150 60 Q180 110 150 60 Q90 10 30 60"
+										stroke="#b6ff6a"
+										strokeWidth="2"
+										fill="none"
+									/>
+								</svg>
+							</div>
+						))}
+					</div>
+				</div>
+				{/* View all study guides button */}
+				<div style={{ width: "100%", display: "flex", justifyContent: "center", background: "#fff", paddingBottom: "5rem" }}>
+					<button
+						style={{
+							background: "#2a2afc",
+							color: "#fff",
+							border: "none",
+							borderRadius: "16px",
+							padding: "1.1rem 2.7rem",
+							fontWeight: "bold",
+							fontSize: "1.25rem",
+							cursor: "pointer",
+							display: "flex",
+							alignItems: "center",
+							gap: "0.7rem"
+						}}
+					>
+						View all study guides <span style={{ fontSize: "1.3rem", fontWeight: "bold" }}>➔</span>
+					</button>
+				</div>
+				{/* Call-to-action section */}
+				<div
+					style={{
+						width: "100%",
+						background: "#07172b",
+						padding: "5rem 0 5rem 0",
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<h1 style={{
+						color: "#fff",
+						fontSize: "3rem",
+						fontWeight: 700,
+						fontFamily: "serif",
+						textAlign: "center",
+						marginBottom: "2rem",
+						lineHeight: "1.15"
+					}}>
+						Get expert guidance for your UK study journey
+					</h1>
+					<p style={{
+						color: "#bfc8e6",
+						fontSize: "1.25rem",
+						textAlign: "center",
+						maxWidth: "700px",
+						marginBottom: "2.7rem"
+					}}>
+						Our experienced advisors help you choose the right course, prepare your application, and secure your place at a top UK university. Book a free counselling session today!
+					</p>
+					<button
+						style={{
+							background: "#ff0a4b",
+							color: "#fff",
+							border: "none",
+							borderRadius: "14px",
+							padding: "1.1rem 2.7rem",
+							fontWeight: "bold",
+							fontSize: "1.25rem",
+							cursor: "pointer",
+							display: "flex",
+							alignItems: "center",
+							gap: "0.7rem"
+						}}
+					>
+						Book free counselling <span style={{ fontSize: "1.3rem", fontWeight: "bold" }}>➔</span>
+					</button>
+				</div>
+				{/* Footer section */}
+				<div
+					style={{
+						width: "100vw",
+						background: "#ccfbad",
+						padding: "4.5rem 0 2.5rem 0",
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+				>
+					<div style={{
+						display: "grid",
+						gridTemplateColumns: "minmax(320px, 1fr) repeat(3, minmax(180px, 1fr))",
+						gap: "2.5rem",
+						maxWidth: "1400px",
+						width: "100%",
+						margin: "0 auto 2.5rem auto",
+						marginLeft: "2.5rem", // add left margin here
+					}}>
+						{/* Logo and description */}
+						<div>
+							<div style={{ display: "flex", alignItems: "center", marginBottom: "2.2rem" }}>
+								<span style={{
+									fontSize: "2.5rem",
+									color: "#ff0a4b",
+									fontWeight: 700,
+									marginRight: "0.7rem"
+								}}>✻</span>
+								<span style={{
+									fontSize: "2.2rem",
+									fontWeight: 700,
+									fontFamily: "serif",
+									color: "#06153a"
+								}}>Devbee</span>
+							</div>
+							<p style={{
+								color: "#06153a",
+								fontSize: "1.18rem",
+								lineHeight: "1.7",
+								marginBottom: "2.2rem"
+							}}>
+								Navigating the path to global higher education can be complex, but you don’t have to do it alone.<br />
+								Whatever your ambition, we’re here to guide you every step of the way. Achieve your goals with the world’s most trusted higher education specialist.
+							</p>
+							<div style={{ display: "flex", gap: "1.5rem", marginBottom: "2.2rem" }}>
+								<a href="#" style={{
+									display: "inline-flex",
+									alignItems: "center",
+									justifyContent: "center",
+									width: "56px",
+									height: "56px",
+									border: "2px solid #06153a",
+									borderRadius: "14px",
+									fontSize: "2rem",
+									color: "#06153a",
+									textDecoration: "none",
+								}}><span>in</span></a>
+								<a href="#" style={{
+									display: "inline-flex",
+									alignItems: "center",
+									justifyContent: "center",
+									width: "56px",
+									height: "56px",
+									border: "2px solid #06153a",
+									borderRadius: "14px",
+									fontSize: "2rem",
+									color: "#06153a",
+									textDecoration: "none",
+								}}><span>f</span></a>
+								<a href="#" style={{
+									display: "inline-flex",
+									alignItems: "center",
+									justifyContent: "center",
+									width: "56px",
+									height: "56px",
+									border: "2px solid #06153a",
+									borderRadius: "14px",
+									fontSize: "2rem",
+									color: "#06153a",
+									textDecoration: "none",
+								}}><span>▶</span></a>
+								<a href="#" style={{
+									display: "inline-flex",
+									alignItems: "center",
+									justifyContent: "center",
+									width: "56px",
+									height: "56px",
+									border: "2px solid #06153a",
+									borderRadius: "14px",
+									fontSize: "2rem",
+									color: "#06153a",
+									textDecoration: "none",
+								}}><span>◎</span></a>
+							</div>
+						</div>
+						{/* Destinations */}
+						<div>
+							<h3 style={{
+								color: "#06153a",
+								fontWeight: 700,
+								fontSize: "1.25rem",
+								marginBottom: "1.1rem"
+							}}>Destinations</h3>
+							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#06153a", fontSize: "1.13rem" }}>
+								<li>United Kingdom</li>
+								<li>Australia</li>
+								<li>Canada</li>
+								<li>Dubai</li>
+								<li>Ireland</li>
+								<li>New Zealand</li>
+								<li>United States</li>
+							</ul>
+						</div>
+						{/* Quick links */}
+						<div>
+							<h3 style={{
+								color: "#06153a",
+								fontWeight: 700,
+								fontSize: "1.25rem",
+								marginBottom: "1.1rem"
+							}}>Quick links</h3>
+							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#06153a", fontSize: "1.13rem" }}>
+								<li>Course finder</li>
+								<li>Services</li>
+								<li>Language prep</li>
+								<li>Scholarships</li>
+								<li>Events</li>
+							</ul>
+						</div>
+						{/* Company */}
+						<div>
+							<h3 style={{
+								color: "#06153a",
+								fontWeight: 700,
+								fontSize: "1.25rem",
+								marginBottom: "1.1rem"
+							}}>Company</h3>
+							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#06153a", fontSize: "1.13rem" }}>
+								<li>About</li>
+								<li>Our team</li>
+								<li>Global offices</li>
+								<li>Anti bribery policy</li>
+								<li>Code of conduct</li>
+								<li>Whistle blower policy</li>
+							</ul>
+						</div>
+					</div>
+					{/* AQF Compliance */}
+					<div style={{
+						maxWidth: "1400px",
+						width: "100%",
+						margin: "0 auto",
+						marginTop: "2.5rem",
+						color: "#06153a",
+						fontSize: "1.13rem"
+					}}>
+						<p style={{ fontWeight: 700, marginBottom: "1rem" }}>
+							Agent Quality Framework (AQF) Compliance
+						</p>
+						<p>
+							Devbee is committed to upholding the highest standards in international student recruitment. We adhere to the principles of the Agent Quality Framework (AQF), ensuring ethical practices, transparency, and professionalism in all our services. Our agents are trained and certified to provide accurate and reliable guidance to students.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
