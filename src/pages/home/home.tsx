@@ -538,7 +538,7 @@ const Home = () => {
 						{/* University cards */}
 						{[
 							{
-								logo: "/src/assets/images/st-andrews-logo.jpg",
+								logo: "/st-andrews-logo.jpg",
 								name: "University of St Andrews",
 								location: "Scotland",
 								ranking: 2,
@@ -546,7 +546,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/src/assets/images/durham-uni-logo.jpg",
+								logo: "/durham-uni-logo.jpg",
 								name: "Durham University",
 								location: "North England",
 								ranking: 5,
@@ -554,7 +554,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/src/assets/images/uob-logo-230.jpg",
+								logo: "/uob-logo-230.jpg",
 								name: "University of Bath",
 								location: "South England",
 								ranking: 8,
@@ -562,7 +562,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/src/assets/images/university-of-warwick-logo-230x90.jpg",
+								logo: "/university-of-warwick-logo-230x90.jpg",
 								name: "University of Warwick",
 								location: "Central England",
 								ranking: 9,
@@ -570,7 +570,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/src/assets/images/loughborough-logo.jpg",
+								logo: "/loughborough-logo.jpg",
 								name: "Loughborough University",
 								location: "Central England",
 								ranking: 10,
@@ -578,7 +578,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/src/assets/images/university-of-bristol-230x90.webp",
+								logo: "/university-of-bristol-230x90.webp",
 								name: "University of Bristol",
 								location: "South England",
 								ranking: 11,
