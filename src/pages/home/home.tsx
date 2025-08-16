@@ -2,6 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { Button, Typography } from "antd";
 import Navbar from "../../components/navbar";
 import "../../App.css";
+import stAndrewLogo from "../../assets/images/st-andrews-logo.jpg"
+import durham from "../../assets/images/durham-uni-logo.jpg"
+import bath from "../../assets/images/uob-logo-230.jpg"
+import warwick from "../../assets/images/university-of-warwick-logo-230x90.jpg"
+import lought from "../../assets/images/loughborough-logo.jpg"
+import bristol from "../../assets/images/university-of-bristol-230x90.webp"
 
 const { Title, Paragraph } = Typography;
 
@@ -538,7 +544,7 @@ const Home = () => {
 						{/* University cards */}
 						{[
 							{
-								logo: "/st-andrews-logo.jpg",
+								logo: stAndrewLogo,
 								name: "University of St Andrews",
 								location: "Scotland",
 								ranking: 2,
@@ -546,7 +552,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/durham-uni-logo.jpg",
+								logo: durham,
 								name: "Durham University",
 								location: "North England",
 								ranking: 5,
@@ -554,7 +560,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/uob-logo-230.jpg",
+								logo: bath,
 								name: "University of Bath",
 								location: "South England",
 								ranking: 8,
@@ -562,7 +568,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/university-of-warwick-logo-230x90.jpg",
+								logo: warwick,
 								name: "University of Warwick",
 								location: "Central England",
 								ranking: 9,
@@ -570,7 +576,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/loughborough-logo.jpg",
+								logo: lought,
 								name: "Loughborough University",
 								location: "Central England",
 								ranking: 10,
@@ -578,7 +584,7 @@ const Home = () => {
 								score: "IELTS 6.5"
 							},
 							{
-								logo: "/university-of-bristol-230x90.webp",
+								logo: bristol,
 								name: "University of Bristol",
 								location: "South England",
 								ranking: 11,
