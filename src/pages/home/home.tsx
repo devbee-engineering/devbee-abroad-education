@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Button, Typography } from "antd";
+import { Button, Typography, Row, Col } from "antd";
 import Navbar from "../../components/navbar";
 import "../../App.css";
 import stAndrewLogo from "../../assets/images/st-andrews-logo.jpg"
@@ -59,16 +59,19 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div style={{ width: "100vw", minHeight: "100vh", overflow: "hidden" }}>
+		<div style={{ width: "100vw", minHeight: "100vh", overflowX: "hidden", overflowY: "auto" }}>
 			<div style={{ background: "#ccfbad", width: "100vw" }}>
 				<Navbar />
 			</div>
+			{/* Hero section using antd grid */}
 			<div
 				style={{
 					position: "relative",
 					width: "100vw",
-					height: "calc(100vh - 70px)", // subtract navbar height if needed
+					minHeight: "calc(100vh - 70px)",
 					overflow: "hidden",
+					display: "flex",
+					flexDirection: "column",
 				}}
 			>
 				<div
@@ -80,67 +83,106 @@ const Home = () => {
 						height: "100%",
 						background: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat",
 						zIndex: 1,
+						overflow: "hidden",
 					}}
 				/>
-				<div
+				<Row
+					justify="center"
+					align="middle"
 					style={{
-						position: "absolute",
-						top: 0,
-						left: 0,
+						position: "relative",
 						width: "100vw",
-						height: "100%",
+						minHeight: "100vh",
 						background: "rgba(7, 23, 43, 0.45)",
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
-						justifyContent: "center",
-						padding: "0 2rem",
 						zIndex: 2,
+						overflow: "hidden",
+						margin: 0,
 					}}
 				>
-					<Title
-						style={{
-							color: "#fff",
-							fontSize: "3.5rem",
-							fontWeight: 700,
-							textAlign: "center",
-							marginBottom: "1.5rem",
-							fontFamily: "serif",
-							width: "100%",
-							maxWidth: "900px",
-						}}
-					>
-						Unlock a world-class<br />education in the UK<br />with expert guidance
-					</Title>
-					<Paragraph
-						style={{
-							color: "#fff",
-							fontSize: "1.2rem",
-							maxWidth: "600px",
-							textAlign: "center",
-							marginBottom: "2.5rem",
-						}}
-					>
-						The UK is home to world-class universities, strong career prospects, and a welcoming community. At Devbee, we’ll guide you every step of the way to studying in the UK—from choosing the right course to building a standout application. You’re in good hands.
-					</Paragraph>
-					<Button
-						type="primary"
-						size="large"
-						style={{
-							background: "#ff0a4b",
-							borderRadius: "14px",
-							fontWeight: "bold",
-							fontSize: "1.1rem",
-							padding: "0.7rem 2rem",
-							display: "flex",
-							alignItems: "center",
-							gap: "0.5rem",
-						}}
-					>
-						Book free counselling <span style={{ fontSize: "1.2rem", fontWeight: "bold" }}>➔</span>
-					</Button>
-				</div>
+					<Col xs={24} sm={22} md={16} lg={10} xl={8} style={{ textAlign: "center", padding: "0 1rem" }}>
+						<Title
+							style={{
+								color: "#fff",
+								fontSize: "2.7rem",
+								fontWeight: 700,
+								marginBottom: "1.2rem",
+								fontFamily: "serif",
+								width: "100%",
+								lineHeight: "1.13",
+								letterSpacing: "-1px",
+								maxWidth: "100%",
+							}}
+							className="hero-title"
+						>
+							Unlock a world-class<br />education in the UK<br />with expert guidance
+						</Title>
+						<Paragraph
+							style={{
+								color: "#fff",
+								fontSize: "1.08rem",
+								marginBottom: "2rem",
+								lineHeight: "1.7",
+								maxWidth: "100%",
+							}}
+							className="hero-desc"
+						>
+							The UK is home to world-class universities, strong career prospects, and a welcoming community. At Devbee, we’ll guide you every step of the way to studying in the UK—from choosing the right course to building a standout application. You’re in good hands.
+						</Paragraph>
+						<Button
+							type="primary"
+							size="large"
+							style={{
+								background: "#ff0a4b",
+								borderRadius: "14px",
+								fontWeight: "bold",
+								fontSize: "1.08rem",
+								padding: "0.9rem 1.5rem",
+								display: "flex",
+								alignItems: "center",
+								gap: "0.7rem",
+								marginBottom: "2rem",
+								width: "100%",
+								maxWidth: "280px",
+								boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
+								justifyContent: "center",
+								marginLeft: "auto",
+								marginRight: "auto",
+							}}
+							className="hero-btn"
+						>
+							Book free counselling <span style={{ fontSize: "1.2rem", fontWeight: "bold" }}>➔</span>
+						</Button>
+					</Col>
+				</Row>
 			</div>
+			{/* Responsive CSS for mobile hero section */}
+			<style>
+				{`
+				html, body, #root {
+					overflow-x: hidden !important;
+				}
+				@media (max-width: 600px) {
+					.hero-title {
+						font-size: 2.1rem !important;
+						max-width: 98vw !important;
+						margin-bottom: 1.2rem !important;
+					}
+					.hero-desc {
+						font-size: 1.05rem !important;
+						max-width: 95vw !important;
+						margin-bottom: 1.7rem !important;
+					}
+					.hero-btn {
+						width: 100% !important;
+						max-width: 100vw !important;
+						font-size: 1.08rem !important;
+						padding: 1rem 0 !important;
+						border-radius: 12px !important;
+						margin-bottom: 2rem !important;
+					}
+				}
+				`}
+			</style>
 			{/* Search section above "Why choose the UK" */}
 			<div
 				style={{
@@ -513,7 +555,16 @@ const Home = () => {
 					</div>
 				</div>
 				{/* World-class universities section */}
-				<div style={{ width: "100%", margin: "4rem 0 0 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
+				<div
+					style={{
+						width: "100%",
+						margin: "4rem 0 0 0",
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+					className="world-class-universities-section"
+				>
 					<h1 style={{
 						color: "#0a1433",
 						fontSize: "2.7rem",
@@ -533,14 +584,19 @@ const Home = () => {
 					}}>
 						Explore UK universities popular among international students for their course options, student experience, and career prospects after graduation.
 					</p>
-					<div style={{
-						display: "grid",
-						gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-						gap: "2.5rem",
-						width: "100%",
-						maxWidth: "1200px",
-						marginBottom: "2.5rem"
-					}}>
+					<div
+						style={{
+							display: "grid",
+							gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+							gap: "2.5rem",
+							width: "100%",
+							maxWidth: "1200px",
+							marginBottom: "2.5rem",
+							paddingLeft: "2rem",
+							paddingRight: "2rem",
+						}}
+						className="universities-grid"
+					>
 						{/* University cards */}
 						{[
 							{
@@ -679,6 +735,18 @@ const Home = () => {
 					}}>
 						View all universities <span style={{ fontSize: "1.3rem", fontWeight: "bold" }}>➔</span>
 					</button>
+					<style>
+						{`
+						@media (max-width: 600px) {
+							.world-class-universities-section .universities-grid {
+								width: 90% !important;
+								padding-left: 0.5rem !important;
+								padding-right: 0.5rem !important;
+								gap: 1.2rem !important;
+							}
+						}
+						`}
+					</style>
 				</div>
 				{/* Blog/news card section */}
 				<div
@@ -690,7 +758,17 @@ const Home = () => {
 						background: "#f8f8fa",
 						padding: "0 0 5rem 0",
 					}}
+					className="blog-featured-section"
 				>
+					<style>
+						{`
+							@media (max-width: 600px) {
+								.blog-featured-section {
+									width: 90% !important;
+								}
+							}
+						`}
+					</style>
 					<div
 						style={{
 							position: "relative",
@@ -774,7 +852,17 @@ const Home = () => {
 						background: "#fff",
 						paddingBottom: "4rem",
 					}}
+					className="study-guides-btn-section"
 				>
+					<style>
+						{`
+							@media (max-width: 600px) {
+								.study-guides-btn-section {
+									width: 90% !important;
+								}
+							}
+						`}
+					</style>
 					<div
 						style={{
 							display: "grid",
@@ -963,16 +1051,20 @@ const Home = () => {
 						flexDirection: "column",
 						alignItems: "center",
 					}}
+					className="footer-section"
 				>
-					<div style={{
-						display: "grid",
-						gridTemplateColumns: "minmax(320px, 1fr) repeat(3, minmax(180px, 1fr))",
-						gap: "2.5rem",
-						maxWidth: "1400px",
-						width: "100%",
-						margin: "0 auto 2.5rem auto",
-						marginLeft: "2.5rem", // add left margin here
-					}}>
+					<div
+						style={{
+							display: "grid",
+							gridTemplateColumns: "minmax(320px, 1fr) repeat(3, minmax(180px, 1fr))",
+							gap: "2.5rem",
+							maxWidth: "1400px",
+							width: "100%",
+							margin: "0 auto 2.5rem auto",
+							marginLeft: "2.5rem",
+						}}
+						className="footer-grid"
+					>
 						{/* Logo and description */}
 						<div>
 							<div style={{ display: "flex", alignItems: "center", marginBottom: "2.2rem" }}>
@@ -1117,10 +1209,58 @@ const Home = () => {
 							Devbee is committed to upholding the highest standards in international student recruitment. We adhere to the principles of the Agent Quality Framework (AQF), ensuring ethical practices, transparency, and professionalism in all our services. Our agents are trained and certified to provide accurate and reliable guidance to students.
 						</p>
 					</div>
+					<style>
+						{`
+						@media (max-width: 700px) {
+							.footer-section {
+								padding: 2.5rem 0 1.5rem 0 !important;
+							}
+							.footer-grid {
+								display: flex !important;
+								flex-direction: column !important;
+								gap: 1.7rem !important;
+								max-width: 98vw !important;
+								margin-left: 0 !important;
+								width: 100vw !important;
+								padding-left: 1rem !important;
+								padding-right: 1rem !important;
+							}
+							.footer-grid > div {
+								width: 100% !important;
+								margin-bottom: 0.7rem !important;
+							}
+							.footer-grid ul {
+								margin-bottom: 0.7rem !important;
+							}
+						}
+						`}
+					</style>
 				</div>
 			</div>
+			<style>
+				{`
+				@media (max-width: 600px) {
+					/* World-class universities grid padding for mobile */
+					[style*="max-width:1200px"] {
+						padding-left: 1rem !important;
+						padding-right: 1rem !important;
+						gap: 1.2rem !important;
+					}
+					/* University card padding for mobile */
+					[style*="border-radius:16px"] {
+						padding-left: 1rem !important;
+						padding-right: 1rem !important;
+						padding-top: 1.2rem !important;
+						padding-bottom: 1.2rem !important;
+						min-height: 320px !important;
+					}
+				}
+				`}
+			</style>
 		</div>
 	);
 };
+
+
 
 export default Home;
