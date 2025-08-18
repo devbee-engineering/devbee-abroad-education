@@ -30,16 +30,20 @@ const Navbar = () => {
 		<nav
 			className="navbar"
 			style={{
-				background: "#0b2c33", // new dark teal theme
+				background: "#0b2c33",
 				borderBottom: "1px solid #18444b",
 				minHeight: "64px",
 				width: "100vw",
+				position: "fixed",
+				top: 0,
+				left: 0,
+				zIndex: 1001,
 			}}
 		>
 			<div className="navbar-container" style={{ position: "relative", background: "#0b2c33" }}>
 				<div className="navbar-logo">
 					<span className="logo-icon" style={{ color: "#fff" }}>✻</span>
-					<span className="logo-text" style={{ color: "#fff" }}>Devbee</span>
+					<span className="logo-text" style={{ color: "#fff" }}>YourUniPath</span>
 				</div>
 				{/* Hamburger/Close icon for mobile */}
 				<div
@@ -295,7 +299,7 @@ const Navbar = () => {
 					className="navbar-btn"
 					style={{
 						display: mobileMenuOpen ? "none" : undefined,
-						background: "#ff6a6a",
+						background: "#E4004B", // enhanced to match navbar accent
 						color: "#fff",
 						border: "none",
 						borderRadius: "14px",
@@ -304,7 +308,10 @@ const Navbar = () => {
 						padding: "0.7rem 2rem",
 						boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
 						cursor: "pointer",
+						transition: "background 0.2s",
 					}}
+					onMouseEnter={e => (e.currentTarget.style.background = "#E4004B")}
+					onMouseLeave={e => (e.currentTarget.style.background = "#E4004B")}
 				>
 					Book free counselling <span className="btn-arrow">➔</span>
 				</button>
@@ -353,7 +360,7 @@ const Navbar = () => {
 									color: "#06153a",
 								}}
 							>
-								Devbee
+								YourUniPath
 							</span>
 							{/* X button styled like screenshot */}
 							<button

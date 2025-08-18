@@ -8,7 +8,7 @@ import bath from "../../assets/images/uob-logo-230.jpg"
 import warwick from "../../assets/images/university-of-warwick-logo-230x90.jpg"
 import lought from "../../assets/images/loughborough-logo.jpg"
 import bristol from "../../assets/images/university-of-bristol-230x90.webp"
-import background from "../../assets/images/robert-bye-CyvK_Z2pYXg-unsplash.jpg"
+import background from "../../assets/images/study-in-dubai.jpg"
 
 const { Title, Paragraph } = Typography;
 
@@ -92,57 +92,73 @@ const Home = () => {
 						background: `url('${background}') center/cover no-repeat`,
 						zIndex: 1,
 						overflow: "hidden",
-						// opacity: 0.18,
 					}}
 				/>
 				<Row
-					justify="center"
+					justify="start"
 					align="middle"
 					style={{
 						position: "relative",
 						width: "100vw",
 						minHeight: "100vh",
-						// background: "rgba(7, 49, 58, 0.92)", // REMOVE this line to remove shade
 						zIndex: 2,
 						overflow: "hidden",
 						margin: 0,
 					}}
 				>
-					<Col xs={24} sm={22} md={16} lg={10} xl={8} style={{ textAlign: "center", padding: "0 1rem" }}>
+					<Col
+						xs={24}
+						sm={24}
+						md={24}
+						lg={24}
+						xl={24}
+						style={{
+							textAlign: "left",
+							padding: "0 1rem",
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "flex-start",
+							height: "100vh",
+							maxWidth: "800px",
+						}}
+					>
 						<Title
 							style={{
 								color: "#fff",
-								fontSize: "2.7rem",
+								fontSize: "5rem",
 								fontWeight: 700,
 								marginBottom: "1.2rem",
 								fontFamily: "serif",
 								width: "100%",
-								lineHeight: "1.13",
+								lineHeight: "1.05",
 								letterSpacing: "-1px",
 								maxWidth: "100%",
 								textShadow: "0 2px 8px rgba(0,0,0,0.18)",
+								textAlign: "left",
 							}}
 							className="hero-title"
 						>
-							Unlock a world-class<br />education in the UK<br />with expert guidance
+							Unlock a world-class <br></br>education in Dubai <br></br>with expert guidance
 						</Title>
 						<Paragraph
 							style={{
-								color: "#bfc8e6",
-								fontSize: "1.08rem",
+								color: "#fff",
+								fontSize: "1.15rem",
 								marginBottom: "2rem",
 								lineHeight: "1.7",
-								maxWidth: "100%",
+								// maxWidth: "540px",
+								textAlign: "left",
 							}}
 							className="hero-desc"
 						>
-							The UK is home to world-class universities, strong career prospects, and a welcoming community. At Devbee, we’ll guide you every step of the way to studying in the UK—from choosing the right course to building a standout application. You’re in good hands.
+							Study in Dubai to access cutting-edge facilities, global connections, and exceptional career opportunities in a thriving metropolis. At StudyIn, we’ll guide you every step of the way to studying in Dubai – from choosing the right course to building a standout application. You’re in good hands.
 						</Paragraph>
 						<Button
 							type="primary"
 							size="large"
 							style={{
-								background: "#0fdc9b", // green accent
+								background: "#E4004B",
 								borderRadius: "14px",
 								fontWeight: "bold",
 								fontSize: "1.08rem",
@@ -152,18 +168,48 @@ const Home = () => {
 								gap: "0.7rem",
 								marginBottom: "2rem",
 								width: "100%",
-								maxWidth: "280px",
+								maxWidth: "320px",
 								boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
-								justifyContent: "center",
-								marginLeft: "auto",
-								marginRight: "auto",
-								color: "#07313a",
+								justifyContent: "flex-start",
+								marginLeft: 0,
+								color: "#fff",
 								border: "none",
+								height: "60px"
 							}}
 							className="hero-btn"
 						>
-							Book free counselling <span style={{ fontSize: "1.2rem", fontWeight: "bold", color: "#07313a" }}>➔</span>
+							<span style={{
+								display: "flex",
+								alignItems: "center",
+								gap: "0.7rem",
+								width: "100%",
+								justifyContent: "space-between"
+							}}>
+								<span>Book free counselling</span>
+								<span style={{ fontSize: "1.2rem", fontWeight: "bold", color: "#fff" }}>➔</span>
+							</span>
 						</Button>
+						<div style={{
+							marginTop: "1.2rem",
+							display: "flex",
+							alignItems: "center",
+							gap: "0.7rem",
+						}}>
+							<div style={{
+								width: "44px",
+								height: "44px",
+								background: "#222",
+								borderRadius: "50%",
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center",
+								color: "#fff",
+								fontSize: "2rem",
+								fontWeight: "bold",
+							}}>
+								<span>↻</span>
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>
@@ -210,9 +256,9 @@ const Home = () => {
 				<div style={{ display: "flex", gap: "1rem", marginBottom: "2.5rem" }}>
 					<button
 						style={{
-							background: activeToggle === "COURSES" ? "#fff" : "transparent",
-							color: activeToggle === "COURSES" ? "#0b2c33" : "#fff",
-							border: "1.5px solid #fff",
+							background: activeToggle === "COURSES" ? "#E4004B" : "transparent",
+							color: activeToggle === "COURSES" ? "#fff" : "#fff",
+							border: "1.5px solid #E4004B",
 							borderRadius: "12px",
 							padding: "0.7rem 2.5rem",
 							fontWeight: "bold",
@@ -227,7 +273,7 @@ const Home = () => {
 					</button>
 					<button
 						style={{
-							background: activeToggle === "UNIVERSITIES" ? "#fff" : "transparent",
+							background: activeToggle === "UNIVERSITIES" ? "#E4004B" : "transparent",
 							color: activeToggle === "UNIVERSITIES" ? "#0b2c33" : "#fff",
 							border: "1.5px solid #fff",
 							borderRadius: "12px",
@@ -456,7 +502,7 @@ const Home = () => {
 				style={{
 					background: "#e7eef0ff", // match dark teal theme
 					width: "100vw",
-					padding: "4rem 0 3rem 0",
+					// padding: "4rem 0 3rem 0",
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
@@ -478,9 +524,9 @@ const Home = () => {
 				<div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
 					<button
 						style={{
-							background: "#0fdc9b", // accent green
-							color: "#07313a", // dark teal text
-							border: "2px solid #0fdc9b", // accent border
+							background: "#E4004B", // accent green
+							color: "#fff", // dark teal text
+							border: "2px solid #E4004B", // accent border
 							borderRadius: "8px",
 							padding: "0.7rem 1.6rem",
 							fontWeight: "bold",
@@ -495,8 +541,8 @@ const Home = () => {
 					<button
 						style={{
 							background: "#e7eef0", // light background for contrast
-							color: "#0fdc9b", // accent green text
-							border: "2px solid #0fdc9b", // accent border
+							color: "#07313a", // accent green text
+							border: "2px solid #E4004B", // accent border
 							borderRadius: "8px",
 							padding: "0.7rem 1.6rem",
 							fontWeight: "bold",
@@ -511,8 +557,8 @@ const Home = () => {
 					<button
 						style={{
 							background: "#e7eef0", // light background for contrast
-							color: "#0fdc9b", // accent green text
-							border: "2px solid #0fdc9b", // accent border
+							color: "#07313a", // accent green text
+							border: "2px solid #E4004B", // accent border
 							borderRadius: "8px",
 							padding: "0.7rem 1.6rem",
 							fontWeight: "bold",
@@ -672,9 +718,9 @@ const Home = () => {
 							const bgColor = "#0b2c33";
 							const accentColor = "#0fdc9b";
 							const borderColor = accentColor;
-							const buttonBg = accentColor;
-							const buttonText = "#07313a";
-							const buttonBorder = accentColor;
+							// const buttonBg = accentColor;
+							// const buttonText = "#07313a";
+							// const buttonBorder = accentColor;
 							const cardTextColor = "#fff";
 							const locationTextColor = accentColor;
 
@@ -735,9 +781,9 @@ const Home = () => {
 										</div>
 									</div>
 									<button style={{
-										background: buttonBg,
-										color: buttonText,
-										border: `2px solid ${buttonBorder}`,
+										background: "#E4004B",
+										color: "#fff",
+										border: `2px solid #E4004B`,
 										borderRadius: "10px",
 										padding: "0.9rem 2.2rem",
 										fontWeight: "bold",
@@ -753,9 +799,9 @@ const Home = () => {
 						})}
 					</div>
 					<button style={{
-						background: "#0fdc9b",
-						color: "#07313a",
-						border: "2px solid #0fdc9b",
+						background: "#E4004B",
+						color: "#fff",
+						border: "2px solid #E4004B",
 						borderRadius: "10px",
 						padding: "1rem 2.7rem",
 						fontWeight: "bold",
@@ -840,8 +886,8 @@ const Home = () => {
 						</h2>
 						<button
 							style={{
-								background: "#ccfbad",
-								color: "#07313a",
+								background: "#E4004B",
+								color: "#fff",
 								border: "none",
 								borderRadius: "16px",
 								padding: "1rem 2.7rem",
@@ -968,8 +1014,8 @@ const Home = () => {
 								</p>
 								<button
 									style={{
-										background: "#ccfbad",
-										color: "#07313a",
+										background: "#E4004B",
+										color: "#fff",
 										border: "none",
 										borderRadius: "16px",
 										padding: "1rem 2.7rem",
@@ -1011,8 +1057,8 @@ const Home = () => {
 				<div style={{ width: "100%", display: "flex", justifyContent: "center", background: "#f3f7f8ff", paddingBottom: "5rem" }}>
 					<button
 						style={{
-							background: "#0fdc9b",
-							color: "#07313a",
+							background: "#E4004B",
+							color: "#fff",
 							border: "none",
 							borderRadius: "16px",
 							padding: "1.1rem 2.7rem",
@@ -1061,8 +1107,8 @@ const Home = () => {
 					</p>
 					<button
 						style={{
-							background: "#0fdc9b",
-							color: "#07313a",
+							background: "#E4004B",
+							color: "#fff",
 							border: "none",
 							borderRadius: "14px",
 							padding: "1.1rem 2.7rem",
@@ -1116,7 +1162,7 @@ const Home = () => {
 									fontWeight: 700,
 									fontFamily: "serif",
 									color: "#fff"
-								}}>Devbee</span>
+								}}>YourUniPath</span>
 							</div>
 							<p style={{
 								color: "#bfc8e6",
@@ -1247,7 +1293,7 @@ const Home = () => {
 							Agent Quality Framework (AQF) Compliance
 						</p>
 						<p>
-							Devbee is committed to upholding the highest standards in international student recruitment. We adhere to the principles of the Agent Quality Framework (AQF), ensuring ethical practices, transparency, and professionalism in all our services. Our agents are trained and certified to provide accurate and reliable guidance to students.
+							YourUniPath is committed to upholding the highest standards in international student recruitment. We adhere to the principles of the Agent Quality Framework (AQF), ensuring ethical practices, transparency, and professionalism in all our services. Our agents are trained and certified to provide accurate and reliable guidance to students.
 						</p>
 					</div>
 					<style>
@@ -1299,6 +1345,47 @@ const Home = () => {
 				}
 				`}
 			</style>
+			{/* Copyright bar below footer */}
+			<div
+				style={{
+					width: "95vw",
+					background: "#18393d",
+					color: "#fff",
+					fontSize: "1.08rem",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "space-between",
+					padding: "0.7rem 2.5rem",
+					borderTop: "1px solid #0fdc9b",
+					position: "relative",
+					zIndex: 1,
+				}}
+			>
+				<div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
+					{/* <div
+						style={{
+							width: "48px",
+							height: "48px",
+							background: "#111c1e",
+							borderRadius: "50%",
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+							marginRight: "1.2rem",
+						}}
+					>
+						 <span style={{ color: "#fff", fontSize: "2rem", fontWeight: "bold" }}>CO</span> 
+					</div> */}
+					<span>© Copyright 2025 StudyIn. All Rights Reserved</span>
+				</div>
+				<div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+					<a href="#" style={{ color: "#fff", textDecoration: "none", fontWeight: 500 }}>Terms of services</a>
+					<span style={{ color: "#fff" }}>•</span>
+					<a href="#" style={{ color: "#fff", textDecoration: "none", fontWeight: 500 }}>Privacy policy</a>
+					<span style={{ color: "#fff" }}>•</span>
+					<a href="#" style={{ color: "#fff", textDecoration: "none", fontWeight: 500 }}>Cookie policy</a>
+				</div>
+			</div>
 		</div>
 	);
 };
