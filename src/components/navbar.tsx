@@ -27,11 +27,19 @@ const Navbar = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<nav className="navbar">
-			<div className="navbar-container" style={{ position: "relative" }}>
+		<nav
+			className="navbar"
+			style={{
+				background: "#0b2c33", // new dark teal theme
+				borderBottom: "1px solid #18444b",
+				minHeight: "64px",
+				width: "100vw",
+			}}
+		>
+			<div className="navbar-container" style={{ position: "relative", background: "#0b2c33" }}>
 				<div className="navbar-logo">
-					<span className="logo-icon">✻</span>
-					<span className="logo-text">Devbee</span>
+					<span className="logo-icon" style={{ color: "#fff" }}>✻</span>
+					<span className="logo-text" style={{ color: "#fff" }}>Devbee</span>
 				</div>
 				{/* Hamburger/Close icon for mobile */}
 				<div
@@ -98,12 +106,19 @@ const Navbar = () => {
 					className="navbar-menu"
 					style={{
 						display: mobileMenuOpen ? "none" : undefined,
+						background: "#0b2c33",
 					}}
 				>
 					<li
 						className="navbar-item dropdown"
 						onMouseEnter={() => !mobileMenuOpen && setOpenDropdown("Destinations")}
 						onMouseLeave={() => !mobileMenuOpen && setOpenDropdown(null)}
+						style={{
+							color: "#fff",
+							cursor: "pointer",
+						}}
+						onMouseOver={e => (e.currentTarget.style.background = "#18444b")}
+						onMouseOut={e => (e.currentTarget.style.background = "transparent")}
 					>
 						<span
 							className="dropdown-toggle"
@@ -113,9 +128,12 @@ const Navbar = () => {
 									openDropdown === "Destinations" ? null : "Destinations"
 								)
 							}
-							style={{ cursor: mobileMenuOpen ? "pointer" : "default" }}
+							style={{
+								cursor: mobileMenuOpen ? "pointer" : "default",
+								color: "#fff",
+							}}
 						>
-							Destinations <span className="arrow">▼</span>
+							Destinations <span className="arrow" style={{ color: "#fff" }}>▼</span>
 						</span>
 						{openDropdown === "Destinations" && (
 							<ul
@@ -123,24 +141,56 @@ const Navbar = () => {
 								style={{
 									position: mobileMenuOpen ? "static" : undefined,
 									boxShadow: mobileMenuOpen ? "none" : undefined,
-									background: mobileMenuOpen ? "transparent" : undefined,
+									background: "#0b2c33",
+									color: "#fff",
 								}}
 							>
 								{dropdowns.Destinations.map((item) => (
-									<li key={item} className="dropdown-item">
+									<li key={item} className="dropdown-item" style={{
+										color: "#fff",
+										background: "transparent",
+										cursor: "pointer",
+									}}
+									onMouseEnter={e => (e.currentTarget.style.background = "#18444b")}
+									onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+									>
 										{item}
 									</li>
 								))}
 							</ul>
 						)}
 					</li>
-					<li className="navbar-item">Course finder</li>
-					<li className="navbar-item">Services</li>
-					<li className="navbar-item">Language prep</li>
+					<li className="navbar-item" style={{
+						color: "#fff",
+						cursor: "pointer",
+					}}
+					onMouseEnter={e => (e.currentTarget.style.background = "#18444b")}
+					onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+					>Course finder</li>
+					<li className="navbar-item" style={{
+						color: "#fff",
+						cursor: "pointer",
+					}}
+					onMouseEnter={e => (e.currentTarget.style.background = "#18444b")}
+					onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+					>Services</li>
+					<li className="navbar-item" style={{
+						color: "#fff",
+						cursor: "pointer",
+					}}
+					onMouseEnter={e => (e.currentTarget.style.background = "#18444b")}
+					onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+					>Language prep</li>
 					<li
 						className="navbar-item dropdown"
 						onMouseEnter={() => !mobileMenuOpen && setOpenDropdown("Resources")}
 						onMouseLeave={() => !mobileMenuOpen && setOpenDropdown(null)}
+						style={{
+							color: "#fff",
+							cursor: "pointer",
+						}}
+						onMouseOver={e => (e.currentTarget.style.background = "#18444b")}
+						onMouseOut={e => (e.currentTarget.style.background = "transparent")}
 					>
 						<span
 							className="dropdown-toggle"
@@ -150,9 +200,12 @@ const Navbar = () => {
 									openDropdown === "Resources" ? null : "Resources"
 								)
 							}
-							style={{ cursor: mobileMenuOpen ? "pointer" : "default" }}
+							style={{
+								cursor: mobileMenuOpen ? "pointer" : "default",
+								color: "#fff",
+							}}
 						>
-							Resources <span className="arrow">▼</span>
+							Resources <span className="arrow" style={{ color: "#fff" }}>▼</span>
 						</span>
 						{openDropdown === "Resources" && (
 							<ul
@@ -160,22 +213,42 @@ const Navbar = () => {
 								style={{
 									position: mobileMenuOpen ? "static" : undefined,
 									boxShadow: mobileMenuOpen ? "none" : undefined,
-									background: mobileMenuOpen ? "transparent" : undefined,
+									background: "#0b2c33",
+									color: "#fff",
 								}}
 							>
 								{dropdowns.Resources.map((item) => (
-									<li key={item} className="dropdown-item">
+									<li key={item} className="dropdown-item" style={{
+										color: "#fff",
+										background: "transparent",
+										cursor: "pointer",
+									}}
+									onMouseEnter={e => (e.currentTarget.style.background = "#18444b")}
+									onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+									>
 										{item}
 									</li>
 								))}
 							</ul>
 						)}
 					</li>
-					<li className="navbar-item">Events</li>
+					<li className="navbar-item" style={{
+						color: "#fff",
+						cursor: "pointer",
+					}}
+					onMouseEnter={e => (e.currentTarget.style.background = "#18444b")}
+					onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+					>Events</li>
 					<li
 						className="navbar-item dropdown"
 						onMouseEnter={() => !mobileMenuOpen && setOpenDropdown("Company")}
 						onMouseLeave={() => !mobileMenuOpen && setOpenDropdown(null)}
+						style={{
+							color: "#fff",
+							cursor: "pointer",
+						}}
+						onMouseOver={e => (e.currentTarget.style.background = "#18444b")}
+						onMouseOut={e => (e.currentTarget.style.background = "transparent")}
 					>
 						<span
 							className="dropdown-toggle"
@@ -185,9 +258,12 @@ const Navbar = () => {
 									openDropdown === "Company" ? null : "Company"
 								)
 							}
-							style={{ cursor: mobileMenuOpen ? "pointer" : "default" }}
+							style={{
+								cursor: mobileMenuOpen ? "pointer" : "default",
+								color: "#fff",
+							}}
 						>
-							Company <span className="arrow">▼</span>
+							Company <span className="arrow" style={{ color: "#fff" }}>▼</span>
 						</span>
 						{openDropdown === "Company" && (
 							<ul
@@ -195,11 +271,19 @@ const Navbar = () => {
 								style={{
 									position: mobileMenuOpen ? "static" : undefined,
 									boxShadow: mobileMenuOpen ? "none" : undefined,
-									background: mobileMenuOpen ? "transparent" : undefined,
+									background: "#0b2c33",
+									color: "#fff",
 								}}
 							>
 								{dropdowns.Company.map((item) => (
-									<li key={item} className="dropdown-item">
+									<li key={item} className="dropdown-item" style={{
+										color: "#fff",
+										background: "transparent",
+										cursor: "pointer",
+									}}
+									onMouseEnter={e => (e.currentTarget.style.background = "#18444b")}
+									onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+									>
 										{item}
 									</li>
 								))}
@@ -211,6 +295,15 @@ const Navbar = () => {
 					className="navbar-btn"
 					style={{
 						display: mobileMenuOpen ? "none" : undefined,
+						background: "#ff6a6a",
+						color: "#fff",
+						border: "none",
+						borderRadius: "14px",
+						fontWeight: "bold",
+						fontSize: "1.13rem",
+						padding: "0.7rem 2rem",
+						boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
+						cursor: "pointer",
 					}}
 				>
 					Book free counselling <span className="btn-arrow">➔</span>
@@ -224,7 +317,7 @@ const Navbar = () => {
 							left: 0,
 							width: "100vw",
 							height: "100vh",
-							background: "#ccfbad",
+							background: "#0b2c33", // new theme for mobile menu
 							zIndex: 999,
 							display: "flex",
 							flexDirection: "column",
@@ -302,7 +395,7 @@ const Navbar = () => {
 						<div
 							style={{
 								fontSize: "1.15rem",
-								color: "#06153a",
+								color: "#fff",
 								marginBottom: "1.5rem",
 							}}
 						>
@@ -312,7 +405,7 @@ const Navbar = () => {
 							style={{
 								width: "100%",
 								height: "2px",
-								background: "#d6f5b0",
+								background: "#18444b",
 								marginBottom: "2rem",
 							}}
 						/>
@@ -322,7 +415,7 @@ const Navbar = () => {
 								padding: 0,
 								margin: 0,
 								fontSize: "1.18rem",
-								color: "#06153a",
+								color: "#fff",
 								flex: 1,
 							}}
 						>
@@ -488,7 +581,7 @@ const Navbar = () => {
 								style={{
 									width: "80vw",
 									maxWidth: "340px",
-									background: "#ff0a4b",
+									background: "#ff6a6a",
 									color: "#fff",
 									border: "none",
 									borderRadius: "14px",
@@ -515,7 +608,7 @@ const Navbar = () => {
 									{/* Circle arrow icon */}
 									<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
 										<circle cx="11" cy="11" r="11" fill="white" />
-										<path d="M8 11h6m0 0l-2-2m2 2l-2 2" stroke="#ff0a4b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+										<path d="M8 11h6m0 0l-2-2m2 2l-2 2" stroke="#ff6a6a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 									</svg>
 								</span>
 							</button>

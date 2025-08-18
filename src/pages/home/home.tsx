@@ -8,6 +8,7 @@ import bath from "../../assets/images/uob-logo-230.jpg"
 import warwick from "../../assets/images/university-of-warwick-logo-230x90.jpg"
 import lought from "../../assets/images/loughborough-logo.jpg"
 import bristol from "../../assets/images/university-of-bristol-230x90.webp"
+import background from "../../assets/images/robert-bye-CyvK_Z2pYXg-unsplash.jpg"
 
 const { Title, Paragraph } = Typography;
 
@@ -59,8 +60,14 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div style={{ width: "100vw", minHeight: "100vh", overflowX: "hidden", overflowY: "auto" }}>
-			<div style={{ background: "#ccfbad", width: "100vw" }}>
+		<div style={{
+			width: "100vw",
+			minHeight: "100vh",
+			overflowX: "hidden",
+			overflowY: "auto",
+			background: "#07313a", // dark teal theme background
+		}}>
+			<div style={{ background: "#07313a", width: "100vw" }}>
 				<Navbar />
 			</div>
 			{/* Hero section using antd grid */}
@@ -72,6 +79,7 @@ const Home = () => {
 					overflow: "hidden",
 					display: "flex",
 					flexDirection: "column",
+					background: "#07313a",
 				}}
 			>
 				<div
@@ -81,9 +89,10 @@ const Home = () => {
 						left: 0,
 						width: "100vw",
 						height: "100%",
-						background: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat",
+						background: `url('${background}') center/cover no-repeat`,
 						zIndex: 1,
 						overflow: "hidden",
+						// opacity: 0.18,
 					}}
 				/>
 				<Row
@@ -93,7 +102,7 @@ const Home = () => {
 						position: "relative",
 						width: "100vw",
 						minHeight: "100vh",
-						background: "rgba(7, 23, 43, 0.45)",
+						// background: "rgba(7, 49, 58, 0.92)", // REMOVE this line to remove shade
 						zIndex: 2,
 						overflow: "hidden",
 						margin: 0,
@@ -111,6 +120,7 @@ const Home = () => {
 								lineHeight: "1.13",
 								letterSpacing: "-1px",
 								maxWidth: "100%",
+								textShadow: "0 2px 8px rgba(0,0,0,0.18)",
 							}}
 							className="hero-title"
 						>
@@ -118,7 +128,7 @@ const Home = () => {
 						</Title>
 						<Paragraph
 							style={{
-								color: "#fff",
+								color: "#bfc8e6",
 								fontSize: "1.08rem",
 								marginBottom: "2rem",
 								lineHeight: "1.7",
@@ -132,7 +142,7 @@ const Home = () => {
 							type="primary"
 							size="large"
 							style={{
-								background: "#ff0a4b",
+								background: "#0fdc9b", // green accent
 								borderRadius: "14px",
 								fontWeight: "bold",
 								fontSize: "1.08rem",
@@ -147,10 +157,12 @@ const Home = () => {
 								justifyContent: "center",
 								marginLeft: "auto",
 								marginRight: "auto",
+								color: "#07313a",
+								border: "none",
 							}}
 							className="hero-btn"
 						>
-							Book free counselling <span style={{ fontSize: "1.2rem", fontWeight: "bold" }}>➔</span>
+							Book free counselling <span style={{ fontSize: "1.2rem", fontWeight: "bold", color: "#07313a" }}>➔</span>
 						</Button>
 					</Col>
 				</Row>
@@ -187,7 +199,7 @@ const Home = () => {
 			<div
 				style={{
 					width: "100vw",
-					background: "#07172b",
+					background: "#0b2c33",
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
@@ -199,14 +211,15 @@ const Home = () => {
 					<button
 						style={{
 							background: activeToggle === "COURSES" ? "#fff" : "transparent",
-							color: activeToggle === "COURSES" ? "#07172b" : "#fff",
-							border: activeToggle === "COURSES" ? "1.5px solid #fff" : "1.5px solid #fff",
+							color: activeToggle === "COURSES" ? "#0b2c33" : "#fff",
+							border: "1.5px solid #fff",
 							borderRadius: "12px",
 							padding: "0.7rem 2.5rem",
 							fontWeight: "bold",
 							fontSize: "1.1rem",
 							boxShadow: activeToggle === "COURSES" ? "0 2px 8px rgba(0,0,0,0.03)" : "none",
 							cursor: "pointer",
+							transition: "background 0.2s, color 0.2s",
 						}}
 						onClick={() => setActiveToggle("COURSES")}
 					>
@@ -215,14 +228,15 @@ const Home = () => {
 					<button
 						style={{
 							background: activeToggle === "UNIVERSITIES" ? "#fff" : "transparent",
-							color: activeToggle === "UNIVERSITIES" ? "#07172b" : "#fff",
-							border: activeToggle === "UNIVERSITIES" ? "1.5px solid #fff" : "1.5px solid #fff",
+							color: activeToggle === "UNIVERSITIES" ? "#0b2c33" : "#fff",
+							border: "1.5px solid #fff",
 							borderRadius: "12px",
 							padding: "0.7rem 2.5rem",
 							fontWeight: "bold",
 							fontSize: "1.1rem",
 							boxShadow: activeToggle === "UNIVERSITIES" ? "0 2px 8px rgba(0,0,0,0.03)" : "none",
 							cursor: "pointer",
+							transition: "background 0.2s, color 0.2s",
 						}}
 						onClick={() => setActiveToggle("UNIVERSITIES")}
 					>
@@ -233,8 +247,8 @@ const Home = () => {
 					style={{
 						display: "flex",
 						alignItems: "center",
-						background: "#07172b",
-						border: "1.5px solid #ff0a4b",
+						background: "#0b2c33",
+						border: "1.5px solid #fff",
 						borderRadius: "14px",
 						padding: "0.5rem 0.5rem 0.5rem 0",
 						width: "700px",
@@ -251,7 +265,7 @@ const Home = () => {
 							padding: "1rem 1.5rem",
 							display: "flex",
 							flexDirection: "column",
-							borderRight: "1px solid #2a2afc",
+							borderRight: "1px solid #fff",
 							position: "relative",
 						}}
 					>
@@ -268,14 +282,14 @@ const Home = () => {
 								style={{
 									background: "transparent",
 									border: "none",
-									color: "#bfc8e6",
+									color: "#fff",
 									fontSize: "1.05rem",
 									outline: "none",
 									width: "100%",
 								}}
 							/>
 							<span
-								style={{ color: "#bfc8e6", fontSize: "1.2rem", marginLeft: "0.5rem", cursor: "pointer" }}
+								style={{ color: "#fff", fontSize: "1.2rem", marginLeft: "0.5rem", cursor: "pointer" }}
 								onClick={() => setSubjectDropdownOpen(v => !v)}
 							>▼</span>
 							{subjectDropdownOpen && (
@@ -295,7 +309,7 @@ const Home = () => {
 									<div
 										style={{
 											padding: "0.7rem 1rem",
-											color: "#bfc8e6",
+											color: "#0b2c33",
 											fontWeight: 500,
 											fontSize: "1rem",
 											cursor: "default",
@@ -310,7 +324,7 @@ const Home = () => {
 												key={opt}
 												style={{
 													padding: "0.7rem 1rem",
-													color: "#07172b",
+													color: "#0b2c33",
 													fontSize: "1rem",
 													cursor: "pointer",
 												}}
@@ -334,7 +348,7 @@ const Home = () => {
 							padding: "1rem 1.5rem",
 							display: "flex",
 							flexDirection: "column",
-							borderRight: "1px solid #2a2afc",
+							borderRight: "1px solid #fff",
 							position: "relative",
 						}}
 					>
@@ -351,14 +365,14 @@ const Home = () => {
 								style={{
 									background: "transparent",
 									border: "none",
-									color: "#bfc8e6",
+									color: "#fff",
 									fontSize: "1.05rem",
 									outline: "none",
 									width: "100%",
 								}}
 							/>
 							<span
-								style={{ color: "#bfc8e6", fontSize: "1.2rem", marginLeft: "0.5rem", cursor: "pointer" }}
+								style={{ color: "#fff", fontSize: "1.2rem", marginLeft: "0.5rem", cursor: "pointer" }}
 								onClick={() => setCourseTypeDropdownOpen(v => !v)}
 							>▼</span>
 							{courseTypeDropdownOpen && (
@@ -378,7 +392,7 @@ const Home = () => {
 									<div
 										style={{
 											padding: "0.7rem 1rem",
-											color: "#bfc8e6",
+											color: "#0b2c33",
 											fontWeight: 500,
 											fontSize: "1rem",
 											cursor: "default",
@@ -393,7 +407,7 @@ const Home = () => {
 												key={opt}
 												style={{
 													padding: "0.7rem 1rem",
-													color: "#07172b",
+													color: "#0b2c33",
 													fontSize: "1rem",
 													cursor: "pointer",
 												}}
@@ -421,7 +435,7 @@ const Home = () => {
 					>
 						<button
 							style={{
-								background: "#ff0a4b",
+								background: "#fff",
 								border: "none",
 								borderRadius: "10px",
 								width: "54px",
@@ -432,7 +446,7 @@ const Home = () => {
 								cursor: "pointer",
 							}}
 						>
-							<span style={{ color: "#fff", fontSize: "2rem" }}>🔍</span>
+							<span style={{ color: "#0b2c33", fontSize: "2rem" }}>🔍</span>
 						</button>
 					</div>
 				</div>
@@ -440,7 +454,7 @@ const Home = () => {
 			{/* New section below hero */}
 			<div
 				style={{
-					background: "#f8f8fa",
+					background: "#e7eef0ff", // match dark teal theme
 					width: "100vw",
 					padding: "4rem 0 3rem 0",
 					display: "flex",
@@ -451,7 +465,7 @@ const Home = () => {
 			>
 				<h1
 					style={{
-						color: "#0a1433",
+						color: "#07313a", // dark teal for contrast
 						fontSize: "2.8rem",
 						fontWeight: 700,
 						textAlign: "center",
@@ -464,42 +478,48 @@ const Home = () => {
 				<div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
 					<button
 						style={{
-							background: "#2a2afc",
-							color: "#fff",
-							border: "none",
+							background: "#0fdc9b", // accent green
+							color: "#07313a", // dark teal text
+							border: "2px solid #0fdc9b", // accent border
 							borderRadius: "8px",
 							padding: "0.7rem 1.6rem",
 							fontWeight: "bold",
 							fontSize: "1rem",
 							cursor: "pointer",
+							boxShadow: "0 2px 8px rgba(7,49,58,0.08)",
+							transition: "background 0.2s, color 0.2s, border 0.2s",
 						}}
 					>
 						Top universities
 					</button>
 					<button
 						style={{
-							background: "#fff",
-							color: "#2a2afc",
-							border: "2px solid #2a2afc",
+							background: "#e7eef0", // light background for contrast
+							color: "#0fdc9b", // accent green text
+							border: "2px solid #0fdc9b", // accent border
 							borderRadius: "8px",
 							padding: "0.7rem 1.6rem",
 							fontWeight: "bold",
 							fontSize: "1rem",
 							cursor: "pointer",
+							boxShadow: "0 2px 8px rgba(7,49,58,0.08)",
+							transition: "background 0.2s, color 0.2s, border 0.2s",
 						}}
 					>
 						Campus and community
 					</button>
 					<button
 						style={{
-							background: "#fff",
-							color: "#2a2afc",
-							border: "2px solid #2a2afc",
+							background: "#e7eef0", // light background for contrast
+							color: "#0fdc9b", // accent green text
+							border: "2px solid #0fdc9b", // accent border
 							borderRadius: "8px",
 							padding: "0.7rem 1.6rem",
 							fontWeight: "bold",
 							fontSize: "1rem",
 							cursor: "pointer",
+							boxShadow: "0 2px 8px rgba(7,49,58,0.08)",
+							transition: "background 0.2s, color 0.2s, border 0.2s",
 						}}
 					>
 						Life in the UK
@@ -510,10 +530,10 @@ const Home = () => {
 					style={{
 						display: "flex",
 						alignItems: "center",
-						background: "#fff",
-						border: "2px solid #d1d5e7",
+						background: "#0b2c33",
+						border: "2px solid #0fdc9b",
 						borderRadius: "18px",
-						boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+						boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
 						padding: "2.5rem 2.5rem",
 						maxWidth: "1100px",
 						width: "100%",
@@ -537,7 +557,7 @@ const Home = () => {
 					<div style={{ flex: 1 }}>
 						<h2
 							style={{
-								color: "#0a1433",
+								color: "#0fdc9b",
 								fontSize: "2.2rem",
 								fontWeight: 700,
 								fontFamily: "serif",
@@ -546,10 +566,10 @@ const Home = () => {
 						>
 							Top universities
 						</h2>
-						<p style={{ color: "#1a2442", fontSize: "1.15rem", marginBottom: "1.1rem", lineHeight: "1.7" }}>
+						<p style={{ color: "#bfc8e6", fontSize: "1.15rem", marginBottom: "1.1rem", lineHeight: "1.7" }}>
 							The UK is home to some of the world’s most prestigious and historic universities, with over 160 higher education institutions offering a wealth of academic opportunities. Many are consistently ranked among the best globally, recognised for their research, teaching excellence, and strong industry connections.
 						</p>
-						<p style={{ color: "#1a2442", fontSize: "1.15rem", lineHeight: "1.7" }}>
+						<p style={{ color: "#bfc8e6", fontSize: "1.15rem", lineHeight: "1.7" }}>
 							Studying in the UK means joining a tradition of academic distinction that has produced generations of influential thinkers, leaders, and Nobel laureates. With a vast range of disciplines to explore, students benefit from rigorous academic standards and a truly international learning environment.
 						</p>
 					</div>
@@ -566,7 +586,7 @@ const Home = () => {
 					className="world-class-universities-section"
 				>
 					<h1 style={{
-						color: "#0a1433",
+						color: "#07313a",
 						fontSize: "2.7rem",
 						fontWeight: 700,
 						textAlign: "center",
@@ -576,7 +596,7 @@ const Home = () => {
 						World-class universities
 					</h1>
 					<p style={{
-						color: "#1a2442",
+						color: "#2c334bff",
 						fontSize: "1.18rem",
 						textAlign: "center",
 						maxWidth: "700px",
@@ -647,82 +667,95 @@ const Home = () => {
 								intake: "Sep 2025",
 								score: "IELTS 6.5"
 							}
-						].map(u => (
-							<div key={u.name} style={{
-								background: "#fff",
-								border: "1.5px solid #d1d5e7",
-								borderRadius: "16px",
-								padding: "2.2rem 2rem 2rem 2rem",
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "center",
-								boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
-								minHeight: "420px"
-							}}>
-								<div style={{
-									width: "120px",
-									height: "70px",
-									marginBottom: "1.2rem",
+						].map(u => {
+							// Dynamic color logic based on background
+							const bgColor = "#0b2c33";
+							const accentColor = "#0fdc9b";
+							const borderColor = accentColor;
+							const buttonBg = accentColor;
+							const buttonText = "#07313a";
+							const buttonBorder = accentColor;
+							const cardTextColor = "#fff";
+							const locationTextColor = accentColor;
+
+							return (
+								<div key={u.name} style={{
+									background: bgColor,
+									border: `2px solid ${borderColor}`,
+									borderRadius: "16px",
+									padding: "2.2rem 2rem 2rem 2rem",
 									display: "flex",
+									flexDirection: "column",
 									alignItems: "center",
-									justifyContent: "center"
+									boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+									minHeight: "420px"
 								}}>
-									<img src={u.logo} alt={u.name} style={{ maxWidth: "100%", maxHeight: "100%" }} />
-								</div>
-								<h2 style={{
-									color: "#0a1433",
-									fontSize: "1.45rem",
-									fontWeight: 700,
-									fontFamily: "serif",
-									textAlign: "center",
-									marginBottom: "0.7rem"
-								}}>
-									{u.name}
-								</h2>
-								<div style={{
-									display: "flex",
-									alignItems: "center",
-									justifyContent: "center",
-									gap: "0.5rem",
-									color: "#2a2afc",
-									fontWeight: 500,
-									fontSize: "1.07rem",
-									marginBottom: "1.1rem"
-								}}>
-									<span style={{ fontSize: "1.1rem" }}>📍</span>
-									<span>{u.location}</span>
-								</div>
-								<div style={{ width: "100%", marginBottom: "1.1rem" }}>
-									<div style={{ color: "#0a1433", fontWeight: 600, fontSize: "1.07rem", marginBottom: "0.3rem" }}>
-										Ranking: <span style={{ fontWeight: 400 }}>{u.ranking}</span>
+									<div style={{
+										width: "120px",
+										height: "70px",
+										marginBottom: "1.2rem",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center"
+									}}>
+										<img src={u.logo} alt={u.name} style={{ maxWidth: "100%", maxHeight: "100%" }} />
 									</div>
-									<div style={{ color: "#0a1433", fontWeight: 600, fontSize: "1.07rem", marginBottom: "0.3rem" }}>
-										Next intake: <span style={{ fontWeight: 400 }}>{u.intake}</span>
+									<h2 style={{
+										color: cardTextColor,
+										fontSize: "1.45rem",
+										fontWeight: 700,
+										fontFamily: "serif",
+										textAlign: "center",
+										marginBottom: "0.7rem"
+									}}>
+										{u.name}
+									</h2>
+									<div style={{
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center",
+										gap: "0.5rem",
+										color: locationTextColor,
+										fontWeight: 500,
+										fontSize: "1.07rem",
+										marginBottom: "1.1rem"
+									}}>
+										<span style={{ fontSize: "1.1rem" }}>📍</span>
+										<span>{u.location}</span>
 									</div>
-									<div style={{ color: "#0a1433", fontWeight: 600, fontSize: "1.07rem" }}>
-										Entry score: <span style={{ fontWeight: 400 }}>{u.score}</span>
+									<div style={{ width: "100%", marginBottom: "1.1rem" }}>
+										<div style={{ color: cardTextColor, fontWeight: 600, fontSize: "1.07rem", marginBottom: "0.3rem" }}>
+											Ranking: <span style={{ fontWeight: 400 }}>{u.ranking}</span>
+										</div>
+										<div style={{ color: cardTextColor, fontWeight: 600, fontSize: "1.07rem", marginBottom: "0.3rem" }}>
+											Next intake: <span style={{ fontWeight: 400 }}>{u.intake}</span>
+										</div>
+										<div style={{ color: cardTextColor, fontWeight: 600, fontSize: "1.07rem" }}>
+											Entry score: <span style={{ fontWeight: 400 }}>{u.score}</span>
+										</div>
 									</div>
+									<button style={{
+										background: buttonBg,
+										color: buttonText,
+										border: `2px solid ${buttonBorder}`,
+										borderRadius: "10px",
+										padding: "0.9rem 2.2rem",
+										fontWeight: "bold",
+										fontSize: "1.07rem",
+										cursor: "pointer",
+										marginTop: "auto",
+										transition: "background 0.2s, color 0.2s, border 0.2s"
+									}}>
+										View university
+									</button>
 								</div>
-								<button style={{
-									background: "#2a2afc",
-									color: "#fff",
-									border: "none",
-									borderRadius: "10px",
-									padding: "0.9rem 2.2rem",
-									fontWeight: "bold",
-									fontSize: "1.07rem",
-									cursor: "pointer",
-									marginTop: "auto"
-								}}>
-									View university
-								</button>
-							</div>
-						))}
+							);
+						})}
 					</div>
 					<button style={{
-						background: "#2a2afc",
-						color: "#fff",
-						border: "none",
+						background: "#0fdc9b",
+						color: "#07313a",
+						border: "2px solid #0fdc9b",
 						borderRadius: "10px",
 						padding: "1rem 2.7rem",
 						fontWeight: "bold",
@@ -731,7 +764,8 @@ const Home = () => {
 						margin: "0 auto 2.5rem auto",
 						display: "flex",
 						alignItems: "center",
-						gap: "0.7rem"
+						gap: "0.7rem",
+						transition: "background 0.2s, color 0.2s, border 0.2s"
 					}}>
 						View all universities <span style={{ fontSize: "1.3rem", fontWeight: "bold" }}>➔</span>
 					</button>
@@ -755,7 +789,7 @@ const Home = () => {
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
-						background: "#f8f8fa",
+						background: "#f2f6f7ff",
 						padding: "0 0 5rem 0",
 					}}
 					className="blog-featured-section"
@@ -772,8 +806,9 @@ const Home = () => {
 					<div
 						style={{
 							position: "relative",
-							background: "#06153a",
+							background: "#0b2c33",
 							borderRadius: "22px",
+							border: "2px solid #0fdc9b",
 							padding: "3.2rem 3.5rem 2.7rem 3.5rem",
 							maxWidth: "1100px",
 							width: "100%",
@@ -794,7 +829,7 @@ const Home = () => {
 							04 Aug 2025
 						</span>
 						<h2 style={{
-							color: "#fff",
+							color: "#0fdc9b",
 							fontSize: "2.4rem",
 							fontWeight: 700,
 							fontFamily: "serif",
@@ -806,7 +841,7 @@ const Home = () => {
 						<button
 							style={{
 								background: "#ccfbad",
-								color: "#06153a",
+								color: "#07313a",
 								border: "none",
 								borderRadius: "16px",
 								padding: "1rem 2.7rem",
@@ -849,7 +884,7 @@ const Home = () => {
 						width: "100%",
 						display: "flex",
 						justifyContent: "center",
-						background: "#fff",
+						background: "#fafdfdff",
 						paddingBottom: "4rem",
 					}}
 					className="study-guides-btn-section"
@@ -892,8 +927,9 @@ const Home = () => {
 							<div
 								key={blog.title}
 								style={{
-									background: "#06153a",
+									background: "#0b2c33",
 									borderRadius: "18px",
+									border: "2px solid #0fdc9b",
 									padding: "2.5rem 2.2rem 2.2rem 2.2rem",
 									boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
 									display: "flex",
@@ -913,7 +949,7 @@ const Home = () => {
 									{blog.date}
 								</span>
 								<h2 style={{
-									color: "#fff",
+									color: "#0fdc9b",
 									fontSize: "2rem",
 									fontWeight: 700,
 									fontFamily: "serif",
@@ -933,7 +969,7 @@ const Home = () => {
 								<button
 									style={{
 										background: "#ccfbad",
-										color: "#06153a",
+										color: "#07313a",
 										border: "none",
 										borderRadius: "16px",
 										padding: "1rem 2.7rem",
@@ -972,11 +1008,11 @@ const Home = () => {
 					</div>
 				</div>
 				{/* View all study guides button */}
-				<div style={{ width: "100%", display: "flex", justifyContent: "center", background: "#fff", paddingBottom: "5rem" }}>
+				<div style={{ width: "100%", display: "flex", justifyContent: "center", background: "#f3f7f8ff", paddingBottom: "5rem" }}>
 					<button
 						style={{
-							background: "#2a2afc",
-							color: "#fff",
+							background: "#0fdc9b",
+							color: "#07313a",
 							border: "none",
 							borderRadius: "16px",
 							padding: "1.1rem 2.7rem",
@@ -995,7 +1031,7 @@ const Home = () => {
 				<div
 					style={{
 						width: "100%",
-						background: "#07172b",
+						background: "#0b2c33",
 						padding: "5rem 0 5rem 0",
 						display: "flex",
 						flexDirection: "column",
@@ -1025,8 +1061,8 @@ const Home = () => {
 					</p>
 					<button
 						style={{
-							background: "#ff0a4b",
-							color: "#fff",
+							background: "#0fdc9b",
+							color: "#07313a",
 							border: "none",
 							borderRadius: "14px",
 							padding: "1.1rem 2.7rem",
@@ -1045,11 +1081,12 @@ const Home = () => {
 				<div
 					style={{
 						width: "100vw",
-						background: "#ccfbad",
+						background: "#07313a", // dark teal theme
 						padding: "4.5rem 0 2.5rem 0",
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
+						borderTop: "1px solid #0fdc9b",
 					}}
 					className="footer-section"
 				>
@@ -1070,7 +1107,7 @@ const Home = () => {
 							<div style={{ display: "flex", alignItems: "center", marginBottom: "2.2rem" }}>
 								<span style={{
 									fontSize: "2.5rem",
-									color: "#ff0a4b",
+									color: "#0fdc9b",
 									fontWeight: 700,
 									marginRight: "0.7rem"
 								}}>✻</span>
@@ -1078,11 +1115,11 @@ const Home = () => {
 									fontSize: "2.2rem",
 									fontWeight: 700,
 									fontFamily: "serif",
-									color: "#06153a"
+									color: "#fff"
 								}}>Devbee</span>
 							</div>
 							<p style={{
-								color: "#06153a",
+								color: "#bfc8e6",
 								fontSize: "1.18rem",
 								lineHeight: "1.7",
 								marginBottom: "2.2rem"
@@ -1097,10 +1134,11 @@ const Home = () => {
 									justifyContent: "center",
 									width: "56px",
 									height: "56px",
-									border: "2px solid #06153a",
+									border: "2px solid #0fdc9b",
 									borderRadius: "14px",
 									fontSize: "2rem",
-									color: "#06153a",
+									color: "#0fdc9b",
+									background: "#07313a",
 									textDecoration: "none",
 								}}><span>in</span></a>
 								<a href="#" style={{
@@ -1109,10 +1147,11 @@ const Home = () => {
 									justifyContent: "center",
 									width: "56px",
 									height: "56px",
-									border: "2px solid #06153a",
+									border: "2px solid #0fdc9b",
 									borderRadius: "14px",
 									fontSize: "2rem",
-									color: "#06153a",
+									color: "#0fdc9b",
+									background: "#07313a",
 									textDecoration: "none",
 								}}><span>f</span></a>
 								<a href="#" style={{
@@ -1121,10 +1160,11 @@ const Home = () => {
 									justifyContent: "center",
 									width: "56px",
 									height: "56px",
-									border: "2px solid #06153a",
+									border: "2px solid #0fdc9b",
 									borderRadius: "14px",
 									fontSize: "2rem",
-									color: "#06153a",
+									color: "#0fdc9b",
+									background: "#07313a",
 									textDecoration: "none",
 								}}><span>▶</span></a>
 								<a href="#" style={{
@@ -1133,10 +1173,11 @@ const Home = () => {
 									justifyContent: "center",
 									width: "56px",
 									height: "56px",
-									border: "2px solid #06153a",
+									border: "2px solid #0fdc9b",
 									borderRadius: "14px",
 									fontSize: "2rem",
-									color: "#06153a",
+									color: "#0fdc9b",
+									background: "#07313a",
 									textDecoration: "none",
 								}}><span>◎</span></a>
 							</div>
@@ -1144,12 +1185,12 @@ const Home = () => {
 						{/* Destinations */}
 						<div>
 							<h3 style={{
-								color: "#06153a",
+								color: "#fff",
 								fontWeight: 700,
 								fontSize: "1.25rem",
 								marginBottom: "1.1rem"
 							}}>Destinations</h3>
-							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#06153a", fontSize: "1.13rem" }}>
+							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#bfc8e6", fontSize: "1.13rem" }}>
 								<li>United Kingdom</li>
 								<li>Australia</li>
 								<li>Canada</li>
@@ -1162,12 +1203,12 @@ const Home = () => {
 						{/* Quick links */}
 						<div>
 							<h3 style={{
-								color: "#06153a",
+								color: "#fff",
 								fontWeight: 700,
 								fontSize: "1.25rem",
 								marginBottom: "1.1rem"
 							}}>Quick links</h3>
-							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#06153a", fontSize: "1.13rem" }}>
+							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#bfc8e6", fontSize: "1.13rem" }}>
 								<li>Course finder</li>
 								<li>Services</li>
 								<li>Language prep</li>
@@ -1178,12 +1219,12 @@ const Home = () => {
 						{/* Company */}
 						<div>
 							<h3 style={{
-								color: "#06153a",
+								color: "#fff",
 								fontWeight: 700,
 								fontSize: "1.25rem",
 								marginBottom: "1.1rem"
 							}}>Company</h3>
-							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#06153a", fontSize: "1.13rem" }}>
+							<ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#bfc8e6", fontSize: "1.13rem" }}>
 								<li>About</li>
 								<li>Our team</li>
 								<li>Global offices</li>
@@ -1199,10 +1240,10 @@ const Home = () => {
 						width: "100%",
 						margin: "0 auto",
 						marginTop: "2.5rem",
-						color: "#06153a",
+						color: "#bfc8e6",
 						fontSize: "1.13rem"
 					}}>
-						<p style={{ fontWeight: 700, marginBottom: "1rem" }}>
+						<p style={{ fontWeight: 700, marginBottom: "1rem", color: "#0fdc9b" }}>
 							Agent Quality Framework (AQF) Compliance
 						</p>
 						<p>
@@ -1214,6 +1255,7 @@ const Home = () => {
 						@media (max-width: 700px) {
 							.footer-section {
 								padding: 2.5rem 0 1.5rem 0 !important;
+								background: #07313a !important;
 							}
 							.footer-grid {
 								display: flex !important;
